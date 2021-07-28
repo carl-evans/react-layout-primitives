@@ -15,11 +15,11 @@ interface StackProps {
 	ultraY?: string;
 }
 
-const Stack = styled.div`
+const Stack = styled.div<StackProps>`
 	display: flex;
-	flex-direction: ${(props: StackProps) => (props.$x ? 'row' : 'column')};
+	flex-direction: ${(props) => (props.$x ? 'row' : 'column')};
 
-	${(props: StackProps) =>
+	${(props) =>
 		css`
 			& > * {
 				margin: 0;
@@ -32,7 +32,7 @@ const Stack = styled.div`
 		`}
 
 	${medium} {
-		${(props: StackProps) =>
+		${(props) =>
 			(props.mediumX || props.mediumY) &&
 			css`
 				flex-direction: ${props.mediumX
@@ -51,7 +51,7 @@ const Stack = styled.div`
 	}
 
 	${large} {
-		${(props: StackProps) =>
+		${(props) =>
 			(props.largeX || props.largeY) &&
 			css`
 				flex-direction: ${props.largeX
@@ -70,7 +70,7 @@ const Stack = styled.div`
 	}
 
 	${ultra} {
-		${(props: StackProps) =>
+		${(props) =>
 			(props.ultraX || props.ultraY) &&
 			css`
 				flex-direction: ${props.ultraX

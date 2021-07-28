@@ -6,22 +6,22 @@ interface GridProps {
 	gap?: string;
 }
 
-const Grid = styled.div`
+const Grid = styled.div<GridProps>`
 	display: grid;
 
-	${(props: GridProps) =>
+	${(props) =>
 		props.columns &&
 		css`
 			grid-template-columns ${props.columns};
 		`}
 
-	${(props: GridProps) =>
+	${(props) =>
 		props.rows &&
 		css`
 			grid-template-rows: ${props.rows};
 		`}
 
-	${(props: GridProps) =>
+	${(props) =>
 		props.gap &&
 		css`
 			gap: ${props.gap};

@@ -27,16 +27,14 @@ interface FlexboxProps {
 const [, queries] = settings;
 const { medium, large, ultra } = queries;
 
-const Flexbox = styled.div`
+const Flexbox = styled.div<FlexboxProps>`
 	display: flex;
-	flex-direction: ${(props: FlexboxProps) =>
-		props.flexDirection || 'column'};
-	flex-wrap: ${(props: FlexboxProps) => props.flexDirection || 'nowrap'};
-	justify-content: ${(props: FlexboxProps) =>
-		props.justifyContent || 'space-between'};
-	align-items: ${(props: FlexboxProps) => props.alignItems || 'center'};
+	flex-direction: ${(props) => props.flexDirection || 'column'};
+	flex-wrap: ${(props) => props.flexDirection || 'nowrap'};
+	justify-content: ${(props) => props.justifyContent || 'space-between'};
+	align-items: ${(props) => props.alignItems || 'center'};
 	width: 100%;
-	max-width: ${(props: FlexboxProps) => props.maxWidth || '100%'};
+	max-width: ${(props) => props.maxWidth || '100%'};
 
 	${medium} {
 		${(props) =>

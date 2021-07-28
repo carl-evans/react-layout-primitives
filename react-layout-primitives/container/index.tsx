@@ -5,14 +5,14 @@ interface ContainerProps {
 	px: string;
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerProps>`
 	box-sizing: border-box;
 	margin: auto;
 	width: 100%;
-	max-width: ${(props: ContainerProps) => props.maxWidth};
+	max-width: ${(props) => props.maxWidth};
 	overflow-x: hidden;
 
-	${(props: ContainerProps) =>
+	${(props) =>
 		props.px &&
 		css`
 			padding-left: ${props.px};
